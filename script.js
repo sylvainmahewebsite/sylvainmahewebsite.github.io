@@ -739,8 +739,12 @@ function particuleAnimation()
 	
 	document.body.addEventListener("pointercancel", _FUNCTION.pointercancel);
 	
+	//let deltaYPositive = 0;
+	
 	_FUNCTION.wheel = function (event)
 	{
+	    //deltaYPositive = Math.abs(event.deltaY);
+	    
 	    if (event.deltaMode === 1)
 	    {
 	        if (event.deltaY != 0)
@@ -750,12 +754,12 @@ function particuleAnimation()
 		    /*
 		    if (event.deltaY < 0)
 		    {
-			    _eventScroll -= event.deltaY * 10;
+			    _eventScroll += deltaYPositive * 10;
 			    //_eventScroll += 75;
 		    }
 		    else if (event.deltaY > 0)
 		    {
-			    _eventScroll -= event.deltaY * 10;
+			    _eventScroll -= deltaYPositive * 10;
 			    //_eventScroll -= 75;
 		    }*/
 		}
@@ -763,16 +767,16 @@ function particuleAnimation()
 		{
 		    if (event.deltaY != 0)
 	        {
-			    _eventScroll += event.deltaY * 0.5;
+			    _eventScroll -= event.deltaY * 0.5;
 		    }
 		    /*
 		    if (event.deltaY < 0)
 		    {
-			    _eventScroll += event.deltaY * 0.5;
+			    _eventScroll += deltaYPositive * 0.5;
 		    }
 		    else if (event.deltaY > 0)
 		    {
-			    _eventScroll += event.deltaY * 0.5;
+			    _eventScroll -= deltaYPositive * 0.5;
 		    }*/
 		}
 	}
